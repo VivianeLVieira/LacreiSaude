@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^23.2.1",
+    "@cypress/webpack-preprocessor": "^7.0.2",
+    "cypress": "^15.7.0"
+  }
+}

@@ -109,7 +109,7 @@ Este projeto utiliza teste exploratório baseado em sessão (Session-Based Explo
 
 ### Execução 
 
-- Executar um teste exploratório Session-Based/Charter consiste em explorar de forma focada e flexível uma funcionalidade ou área da aplicação, seguindo objetivos pré-definidos.
+- Executar um teste exploratório Session-Based/Charter consiste em explorar de forma focada e flexível uma funcionalidade ou área da aplicação, seguindo objetivos pré-definidos. Essa técnica permite descobrir problemas não previstos, facilita o aprendizado rápido sobre a aplicação e aumenta a eficiência na identificação de bugs.
 
 - Navegar pela funcionalidade alvo explorando diferentes entradas, combinações e fluxos alternativos.
 
@@ -118,8 +118,6 @@ Este projeto utiliza teste exploratório baseado em sessão (Session-Based Explo
 - Registrar problemas, ideias de melhoria e evidências (screenshots, logs) primeiramente em formato de anotação.
 
 - Revisar e priorizar os resultados ao final da sessão, reportar bugs e compartilhar achados com a equipe.
-
-Essa técnica permite descobrir problemas não previstos, facilita o aprendizado rápido sobre a aplicação e aumenta a eficiência na identificação de bugs.
 
 ## Testes de Responsividade e Usabilidade
 
@@ -183,12 +181,6 @@ O report automático deve aparecer no console.
 ## Checklist de Segurança Aplicado
 
 **Checklist**: https://www.notion.so/Checklist-de-Seguran-a-2b18ac69d04c80ba81d2ff7c8d5c83da
-
-⚠️ Observação Geral: Alguns testes não puderam ser executados devido a limitações de acesso ao banco de dados e ferramentas de monitoramento. A execução do checklist foi limitada pelo tempo. Não há plano de backup e rollback implementado. 
-
-Percentual de execução do checklist: 8/20
-
-Conclusão: O plano de segurança está em processo de desenvolvimento. É necessário priorizar testes críticos e implementar políticas de backup/rollback.
 
 ## Processo de Rollback dos Testes Automatizados
 

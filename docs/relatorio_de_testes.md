@@ -25,7 +25,7 @@ Os **testes de acessibilidade** usando navegação via teclado ou "TAB" também 
 Testes com **VoiceOver** e **Lighthouse** foram parcialmente bloqueados. Sendo executados nas telas de login e criação de contas. 
 O report do Lighthouse informou que a note de acessibilidade atual é 95, ou seja satisfatória. O report do Lighthouse pode ser encontrado em nao_funcionais/teste_de_acessibilidade/lighthouse/reports
 
- No voiceOver foram achados alguns bugs que dificultam mas não impedem que o usuário realize suas atividades. 
+No **VoiceOver** foram achados alguns bugs que dificultam mas não impedem que o usuário realize suas atividades. 
 
 No **teste de performce** com carga realizado no endpoint de autenticaçao, os seguintes resultados foram observados:
 
@@ -42,5 +42,10 @@ nao_funcionais/teste_de_desempenho/reports
 
 Não foi possível executar **testes de responsividade** da aplicação nos devices inicialmente planejados, porém alguns erros de usabilidade e layout foram encontrados e reportados.
 
+Alguns testes do **Checklist de Segurança** não puderam ser executados devido a limitações de acesso ao banco de dados e ferramentas de monitoramento.
+O checklist de segurança está em andamento, com 8 itens validados de um total de 20.
+É necessário priorizar a implementação de políticas de backup e rollback.
+
 ### Conclusão
+
 Embora tenha sido necessário priorizar determinados testes e replanejar algumas execuções em função das limitações impostas pelos erros do servidor, a análise da severidade dos bugs e dos problemas de ambiente indica que esta versão do sistema ainda não está pronta para ser colocada no ambiente de produção e disponibilizada ao público.

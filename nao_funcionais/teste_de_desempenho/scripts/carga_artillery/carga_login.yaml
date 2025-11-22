@@ -15,11 +15,11 @@ config:
       name: Spike phase
 
 scenarios:
-  - flow:
-      - loop:
-          - post:
-              url: '/v1/lacreiid/auth/login/'
-              json:
-                email: "testertestingdone@gmail.com"
-                password: "Lacrandoem321$"
-        count: 1
+    - flow:
+        - loop:
+            - post:
+                url: '/v1/lacreiid/auth/login/'
+                json:
+                  email: "testertestingdone@gmail.com"
+                  password: "Lacrandoem321$"
+          count: 1

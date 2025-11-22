@@ -1,25 +1,27 @@
 name: Testes e2e
 
 on:
-    push:
-        branches:
-        - main
-    pull_request:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-    cypress-run:
-        runs-on: ubuntu-latest
-        steps:
-        - name: Baixe o repositório
-          uses: actions/checkout@v4
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Baixe o repositório
+      uses: actions/checkout@v4
 
-        - name: Configure Node.js
-          uses: actions/setup-node@v4
-          with:
-            node-version: '22.14.0'
+    - name: Configure Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '22.14.0'
 
-        - name: Instale dependências
-          run: npm ci
+    - name: Instale dependências
+      run: npm ci
 
-        - name: Execute tests automáticos
-          run: npm test
+    - name: Execute tests automáticos
+      run: npm test

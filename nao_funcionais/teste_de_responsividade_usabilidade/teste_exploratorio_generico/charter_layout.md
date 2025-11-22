@@ -1,12 +1,14 @@
-# Teste Exploratório Genérico: Layout
+## Teste Exploratório Genérico: Layout
 
 **Charter:** 
 
 Verificar responsividade e consistência visual da aplicação em diferentes dispositivos e resoluções.
 
+**ID:** NFR-EXP-ACCS-002*
+
 **Objetivo da Sessão:**
 
-Explorar a aplicação para garantir que **layout, alinhamento, cores, tipografia, imagens e elementos visuais** estejam corretos e consistentes em **desktop, tablet e mobile**.
+Explorar a aplicação para garantir que layout, alinhamento, cores, tipografia, imagens e elementos visuais** estejam corretos e consistentes em desktop, tablet e mobile.
 
 **Duração:** 30 minutos
 

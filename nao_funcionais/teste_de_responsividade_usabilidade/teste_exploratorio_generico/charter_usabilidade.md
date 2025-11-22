@@ -1,14 +1,14 @@
-# Teste Exploratório Genérico: Usabilidade
+## Teste Exploratório Genérico: Usabilidade
 
 **Charter:** 
 
-**ID:** NFR-EXP-002*
-
 Avaliar a experiência do usuário e a facilidade de uso da aplicação.
+
+**ID:** NFR-EXP-ACCS-003*
 
 **Objetivo da Sessão:**
 
-Explorar a aplicação para identificar **problemas de usabilidade, clareza de navegação, legibilidade, tamanho de botões e campos e compreensão de mensagens** em diferentes dispositivos.
+Explorar a aplicação para identificar problemas de usabilidade, clareza de navegação, legibilidade, tamanho de botões e campos e compreensão de mensagens em diferentes dispositivos.
 
 **Duração:** 30 minutos
 

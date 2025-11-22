@@ -30,7 +30,7 @@ async function setupNodeEvents(on, config) {
 }
 
 module.exports = {
-  projectId: "<Please create a project in Cypress Cloud>",
+  //projectId: "<create a project in Cypress Cloud>",
   default: defineConfig({
     e2e: {
       specPattern: 'cypress/e2e/**/*.feature',

@@ -1,21 +1,70 @@
 # Lacrei_Saude
 
- Sistema Alvo: https://paciente-staging.lacreisaude.com.br/ 
- 
- Reservar contas de email válidas para testes manuais e automáticos.
+ **Sistema Alvo:** https://paciente-staging.lacreisaude.com.br/ 
 
- Configurar ambiente de testes:
- Listar ferramentas necessárias
- Instalação de softwares e dependências  
- Variáveis de ambiente
+ O Lacrei Saúde é uma sistema que conectamos pessoas LGBTQIAPN+ com profissionais de saúde qualificados, proporcionando experiências de cuidado seguras e inclusivas.
+
+
+   Planejamento de testes ---------------------
+  Objetivo: Validação de funcionalidades, performance, segurança, usabilidade e responsividade.
+  Tipos de teste: funcional, não funcional, exploratório e automático.
+  Relatório: Ao fim da execução de cada rodada e tipo de testes, um relatório deve ser gerado com a análise da qualidade das funcionalidades testadas e o número de bugs. Ao fim de toda a bateria de testes, o testador deve liberar ou não a versão testada para ir para produção. 
+
+ 
+**Funcionalidades:**
+
+  1. Cadastro da pessoa usuária
+  2. Busca de profissional de saúde
+  3. Edição de perfil
+  4. Recuperação de senha
+
+Escopo negativo: As funcionalidades não listadas no plano de testes, bem como os fluxos alternativos que levem à exaustão do sistema, serão desconsiderados.
+
+
+
+**Lista de ferramentas necessárias:**
+  - Testes Funcionais: Gherkin, Notion, GitHub
+  - Automação: Cypress + Cucumber
+  - CI/CD: GitHub Actions
+  - Acessibilidade: Lighthouse,  DevTools, VoiceOver
+  - Performance: JMeter
+  - Gestão de Bugs: GitHub Issues e Notion (ESCOLHEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE)
 
 # **Execução de Testes**
+
+Antes de executar os testes, certifique-se de:
+  - ter a aplicação em execução publicada em um ambiente acessível (staging).
+
+  - ter acesso à internet.
+
+  - ter contas de usuário válidas ou dados de teste necessários.
+
+  - ter dispositivos e navegadores disponíveis, caso os testes envolvam responsividade ou usabilidade.
+
+  - ter ferramentas de registro e captura de evidências (screenshots, gravação de tela, logs). ex: 1click
+
+  - instalar dependências e ferramentas necessárias para execução de testes automáticos
+
 
 ## Testes manuais:
 
 Os testes manuais do projeto estão escritos no formato **Gherkin**, utilizando **Scenario Outline** com exemplos de possíveis entradas para o mesmo fluxo.
 
-### **Passos para localizar os testes**
+#### Exemplo de Teste
+
+```gherkin
+Feature: Cadastro de Usuário
+
+  Scenario Outline: Usuário cadastra com sucesso
+    Given que o usuário acessa a página de cadastro
+    When ele preenche o formulário com:
+      | Nome            | Email            | Senha     |
+      | viviane vieira  | viviane@mail.com | testando  |
+    And clica no botão "Cadastrar"
+    Then ele deve ver a mensagem "Cadastro realizado com sucesso"o"
+```
+
+#### **Passos para localizar os testes**
 
 1. Acesse a raiz do projeto.
 2. Entre na pasta `cypress`.
@@ -24,27 +73,20 @@ Os testes manuais do projeto estão escritos no formato **Gherkin**, utilizando 
     - Cada arquivo `.feature` contém cenários escritos em Gherkin.
     - Os Scenario Outlines permitem testar múltiplas combinações de dados para o mesmo fluxo. 
     
-    
-### **Passos para executar os testes**
 
-#### **Execução manual em dispositivos móveis**
+#### **Execução manual**
 
 Para testar os cenários manualmente em smartphones, tablets ou no desktop, siga os passos abaixo:
 
-1. **Preparar o ambiente de teste**
-    - Abra o navegador no dispositivo (Chrome, Safari ou outro compatível).
-    - Certifique-se de que o dispositivo esteja conectado à mesma rede que a aplicação em execução ou que a aplicação esteja publicada em um ambiente acessível (staging).
-
-2. **Acessar a aplicação**
+1. **Acessar a aplicação**
     - Digite a URL da aplicação no navegador do dispositivo.
     - Navegue até a funcionalidade que deseja testar, seguindo os passos descritos nos cenários `.feature`.
 
-3. **Seguir os cenários**
+2. **Seguir os cenários**
     - Abra o arquivo `.feature` correspondente.
     - Para cada **Scenario Outline**, execute cada linha da tabela de `Examples` como um teste individual.
     - Preencha campos de formulário, selecione opções, clique em botões e interaja com a aplicação conforme descrito no cenário.
     - Observe os resultados esperados descritos na coluna `resultado` de cada cenário.
-
 
 
 ## Testes automáticos com Cypress + Cucumber:
@@ -157,27 +199,130 @@ O pacote também inclui testes automáticos de contraste de cores e legibilidade
 
 3. Navegue até teste_de_acessibilidade
 
-###Lighthouse <----------------------------------------------------------------->
+###Lighthouse com funciona<------------------------------------------------------------>
 
-## Testes de Performance:
+## Testes de Desempenho:
 
-JMeter 
+Performance Isolado -  
+Carga - JMeter como funciona??????
+
+### **Passos para localizar os testes**
+
+1. Acesse a raiz do projeto.
+
+2. Entre na pasta não-funcionais.
+
+3. Navegue até teste_de_desempenho
+
+
+## Checklist de Segurança Aplicado:
+
+checklist: https://www.notion.so/Checklist-de-Seguran-a-2b18ac69d04c80ba81d2ff7c8d5c83da
+
+⚠️ Observação Geral: Alguns testes não puderam ser executados devido a limitações de acesso ao banco de dados e ferramentas de monitoramento. A execução do checklist foi limitada pelo tempo. Não há plano de backup e rollback implementado. 
+
+Percentual de execução do checklist: 8/20
+
+Conclusão: O plano de segurança está em processo de desenvolvimento. É necessário priorizar testes críticos e implementar políticas de backup/rollback.
+
+## Processo de Rollback dos Testes Automatizados
+
+(Embora não aplicável ao presente desafio, o texto abaixo descreve uma forma adequada de implementação.)
+
+Para garantir integridade e previsibilidade durante a execução de testes automatizados, recomenda-se a utilização de um processo estruturado de rollback baseado em seed data. Esse mecanismo permite restaurar o banco de dados para um estado inicial conhecido, assegurando que cada teste seja executado sob condições controladas e livres de interferência de execuções anteriores.
+
+1. Seed Data e Verificação de Consistência
+
+O projeto pode manter um arquivo de referência contendo o estado base do banco de dados (seed data). Esse arquivo representa a configuração inicial esperada do sistema e deve ser utilizado para:
+
+ - Restaurar rapidamente o banco de dados para um estado conhecido durante desenvolvimento ou testes.
+
+ - Garantir consistência após a execução de migrations ou alterações manuais.
+
+ - Facilitar processos de QA, integração contínua (CI/CD), versionamento de dados e rollback sempre que houver falhas.
+
+2. Funcionamento do Processo
+
+    a) Arquivo de Seed
+    Contém todos os registros iniciais definidos como “fonte de verdade” do banco de dados. Representa o estado que deve ser restaurado sempre que necessário.
+
+    b) Aplicação dos Seeds
+    Scripts ou comandos específicos são executados para inserir ou restaurar os dados conforme o arquivo de seed, garantindo que o ambiente volte ao estado padrão.
+
+    c) Verificação de Consistência
+    Após qualquer alteração no banco de dados, podem ser utilizados scripts de comparação para identificar divergências entre:
+      - o estado atual da base
+      - o estado definido no seed
+
+Esse procedimento reduz riscos de corrupção, inconsistências ou violações de integridade referencial.
+
+3. Execução Durante os Testes
+
+  Durante a execução da suíte de testes automatizados, a base pode ser restaurada entre cada teste ou após um conjunto de testes que possam se sobrepor. Essa prática garante que cada caso seja executado em um ambiente totalmente previsível, evita resultados inesperados decorrentes de resíduos ou modificações deixadas por testes anteriores e preserva a integridade, confiabilidade e reprodutibilidade da suíte de testes.
+
+
+4. Exemplos de Seed Data:
+
+ - Conjunto de usuários previamente cadastrados.
+
+ - Registros de consultas ou dados operacionais essenciais para funcionamento do sistema.
+
+ - Configurações de permissões, perfis, tokens ou parâmetros iniciais.
+
+
+# Relatório de Testes:
+
+⚠️ Problemas no ambiente de staging e bugs no sistema: No terceiro do desafio, houve algum problema no servidor que me impediu de logar e cadastrar novos usuário na aplicação. Além do problema do servidor, funcionalidades de recuperação de senha, solicitacao de um novo de e-mail de confirmação (caso o mesmo tenha expirado) também não funcionam corretamente. Esses problemas foram reportado com mais detalhes por e-mail, bloqueando a execução dos testes e a conclusão do desafio. Durante o planejamento dos testes e escrita de casos de teste, eu aplique as técnicas de teste ad-hoc e exploratório freestyle.
+
+Durante esse processo eu consegui mapear as telas e encontrar diversos bugs na aplicação, tanto funcionais como não funcionais, tudo via desktop. Felizmente, eu sempre tento fazer prints e capturar os problemas em vídeo para facilitar a reprodução posterior. Há bugs críticos, problemas de layout, erros de digitação, erros de persistência na base de dados, falta de tratamento de erros nas messagens de erros passadas para o usuário, o volume de dados na base parece ser insuficiente para alguns testes, problemas de usabilidade como na navegação via teclado e outros.
+
+Sobre a execução de testes automáticos:  O sistema requisita que ao final da primeira etapa do cadastro, que o usuário entre no e-mail pessoal para confirmar o cadastro na aplicação.
+Nessa etapa, além de haver uma espera de 4 minutos (aconteceu 2 vezes) para que o e-mail de confirmação apareca na caixa de entrada e ser uma ação manual, que dificulta a automação. É sugerido que esse passo seja realizado automáticamente atravéz de um ping direto na API, garantindo que o teste não precise sair do contexto da apliçação.
+
+⚠️Por esse motivo e os mencionados anteiormente não foi possível finalizar um exemplo completo de cadastro automatizado.
+
+Foi possível executar alguns testes com navegação via teclado, porém com voiceOver só foram executadas nas telas iniciais, antes do login. 
+O Teste de desempenho testa a performance da aplicação ao ser acessada por muitos usuário que desejam se cadastrar e demonstrou..... (além das erros de servidor)
+
+⚠️Não é possível gerar um report detalhado com cobertura de testes por exemplo, porém, considerando o tempo de exeçução dos testes é possível afirmar que os caminhos mais críticos da aplicação foram cobertos. 
+
+O número total de bugs reportados é: 
+Bugs críticos: 
+
+
+Resumindo, o sistema ainda não está pronto para ir para o ambiente de produção e ser utilizado para o público.  
+
+
+Extras: 
+
+1. O link da logo na tela principal da apliçação (superior, esquerda) em staging leva o usuário para o ambiente de produção.
+
+    https://lacreisaude.com.br/
+
+Por curiosidade, eu me cadastrei no ambiente de produção (acabei fazendo um exploratório) e reparei que o e-mail de confirmação de conta chegou como se tivesse vindo do ambiente de staging. Ainda assim, eu confirmei e consegui logar na conta em produção. 
+
+Observei também que muitos problemas em staging não acontecem no de produção, o que é muito positivo. 
+
+2. Carga horária do volutariado fornecida inconsiste entre as fontes:
+ - No site do atados são 13 horas semanais.
+
+    https://www.atados.com.br/vaga/qa-lead-lacrei-saude-313538
+
+ - No e-mail com os detalhes do desafio são 15 horas.
+ - E no notion são: 20 horas. 
+    
+    https://lacrei-saude.notion.site/Desafio-T-cnico-Quality-Assurance-na-Lacrei-Sa-de-de16f470007841aba5c564e5dd543943
+
+Estou reportando aqui, por parece que faz parte do desafio, verificar se observamos os detalhes. Além ter ficado curiosa sobre qual carga horária é a correta. 
+
+------
+  
 
 
 
 
 
 
-  Planejamento de testes 
-  Objetivo: Validação de funcionalidades, performance, segurança, usabilidade e responsividade.
-  Tipos de teste: funcional, não funcional, exploratório e automático.
-  Relatório: Ao fim da execução de cada rodada e tipo de testes, um relatório deve ser gerado com a análise da qualidade das funcionalidades testadas e o número de bugs. Ao fim de toda a bateria de testes, o testador deve liberar ou não a versão testada para ir para produção. 
-
-  Lista de Funcionalidades:
-  Cadastro da pessoa usuária
-  Busca de profissional de saúde
-  Edição de perfil
-  Recuperação de senha
   
 
   Criação teste
@@ -216,72 +361,4 @@ JMeter
     - Uso com leitores de tela (VoiceOver)
     - Contraste de cores e legibilidade (nota mínima 90 no Lighthouse)
   
-Escopo negativo: As funcionalidades não listadas no plano de testes, bem como os fluxos alternativos que levem à exaustão do sistema, serão desconsiderados nesta execução.
-O foco permanece apenas nas funcionalidades e cenários previamente definidos, garantindo que os testes sejam direcionados e produtivos.
-
-
-
-Execução de Testes 
-
- Como executar os testes: 
- 
- Testes Manuais -> Os testes manuais seguem a metodologia Gherkin, permitindo descrever o comportamento esperado do sistema de forma clara e estruturada, utilizando a sintaxe:
-  Exemplo de Teste
-  Feature: Cadastro de Usuário
-  Scenario: Usuário cadastra com sucesso
-    Given que o usuário acessa a página de cadastro
-    When ele preenche o formulário com:
-      | Nome            | Email                 | Senha     |
-      | viviane vieira  | viviane@mail.com      | testando  |
-    And clica no botão "Cadastrar"
-    Then ele deve ver a mensagem "Cadastro realizado com sucesso"
-
-Inputs de Teste
-Para cada cenário, existem exemplos de inputs em forma tabular para facilitar a execução e validação dos testes, a fim de cobrir fluxos principais e alternativos de sucesso e falhos.
-Resultados esperados: Mensagens de sucesso ou erro e criação de registros no banco.
-
-Reporte de bugs/melhorias: Após a execução de cada caso de teste.
-
-Testes automáticos
- ---------->>>>>> Explicar como executar uma suíte de testes automáticos.
-
-Exploratório com charters: 
-A execução de um teste exploratório consiste em seguir o objetivo definido, navegando pela área ou funcionalidade alvo e testando diferentes entradas, combinações e fluxos alternativos. Durante a exploração, observe o comportamento do sistema, as mensagens exibidas e quaisquer inconsistências, registrando bugs, ideias de melhoria e evidências como capturas de tela ou logs. É importante manter o foco nos pontos-chave definidos no charter, revisar e priorizar os problemas encontrados ao final da sessão. Por fim, compartilhar os resultados com a equipe ou registrar no repositório/Notion, aproveitando a flexibilidade do teste exploratório para identificar questões não previstas inicialmente. Esse processo também ajuda o testador a aprender mais rapidamente sobre a aplicação, compreendendo seus fluxos e funcionamento, o que facilita a identificação de bugs de forma mais eficiente.
-
-Documentação:
- Estrutura de pastas e arquivos
-
-/docs
-   └─ casos_de_teste/
-       ├─ cadastro_usuario.feature
-       └─ ...
-       
-Checklist de segurança 
-  Testes realizados no ambiente de staging
-  Dados de login e senha devem ser escondidos no .ENV
-
-  
-
-Processo de rollback dos testes automatizados (não se aplica ao desafio, mas o texto a seguir sugere como poderia ser feito) ------------------>
- 
-   Seed Data e Verificação de Consistência -> O projeto pode manter um arquivo de referência contendo o estado base do banco de dados ou seed data. Esse arquivo representa a configuração inicial esperada de todos os dados do sistema e deverá ser utilizado para:
-
-  1. Restaurar rapidamente o banco de dados para um estado conhecido durante desenvolvimento ou testes.
-
-  2. Garantir consistência após a execução de scripts de alteração (migrations, updates ou correções manuais).
-
-  3. Facilitar processos de QA, integração contínua (CI/CD), versionamento de dados e rollback em caso de falhas.
-
-  Como deve funcionar: 
-
-  Arquivo de Seed -> Contém todos os registros iniciais do banco, servindo como fonte de verdade para o estado esperado.
-  
-  Aplicação de Seeds -> Scripts ou comandos podem ser executados para inserir ou restaurar os dados conforme definidos no arquivo de seed.
-  
-  Verificação de Consistência -> Após alterações no banco, scripts de comparação podem ser utilizados para identificar divergências entre os dados atuais e o estado definido no seed. Isso garante que as alterações não corrompam a base ou violem regras de integridade.
-
-  Durante o teste -> Durante a execução dos testes, a base de dados pode ser restaurada após a execução dos casos de teste ou entre testes que possam se sobrepor.
-  Essa prática garante que cada teste seja executado em um estado conhecido e consistente do banco de dados, que resultados inesperados causados por alterações de testes anteriores sejam evitados e que a integridade e confiabilidade dos testes sejam mantidas.
-
-  Exemplo de seed data: Ter um grupo de usuários previamente cadastrados no banco de dados, ter dados de consultas. 
 

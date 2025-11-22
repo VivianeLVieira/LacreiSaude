@@ -4,11 +4,24 @@ about: "Relate um problema encontrado no sistema"
 labels: ["bug", "needs triage"]
 ---
 
-### Tipo de Bug
-*Ex.: Funcional, UI, Performance, Segurança, Regressão*
-
 ### Título
-*Ex.: Usuário não consegue cadastrar-se*
+*Ex.: Usuário*
+
+### Tipo de Bug
+- [ ] Funcional
+- [ ] Interface ou UI
+- [ ] Usabilidade ou UX
+- [ ] API
+- [ ] Performance
+- [ ] Responsividade
+- [ ] Acessibilidade
+- [ ] Segurança
+- [ ] Banco de dados
+- [ ] Internacionalização
+- [ ] Localização
+- [ ] Compatibilidade (cross-platform)
+- [ ] Documentação
+
 
 ### Severidade
 - [ ] Critical – Impede uso do sistema  

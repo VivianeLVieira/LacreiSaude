@@ -34,8 +34,8 @@ Corpo da requisição:
 
 ### **Resultados Esperados**
 
-- Tempo médio de resposta: < 2.000 ms (tempo médio aceitável / confirmar com UX)
-- Tempo máximo de resposta: < 5.000 ms (tempo médio aceitável / confirmar com UX)
+- Tempo médio de resposta: < 2.000 ms 
+- Tempo máximo de resposta: < 5.000 ms (operações críticas)
 - Nenhum travamento, queda ou reinicialização não planejada do sistema
 
 ### **Entregáveis**

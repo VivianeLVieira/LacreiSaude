@@ -1,0 +1,25 @@
+config:
+  target: https://api-staging.lacreisaude.com.br
+  phases:
+    - duration: 5
+      arrivalRate: 1
+      rampTo: 5
+      name: Warm up phase
+    - duration: 5
+      arrivalRate: 5
+      rampTo: 10
+      name: Ramp up load
+    - duration: 15
+      arrivalRate: 10
+      rampTo: 30
+      name: Spike phase
+
+scenarios:
+  - flow:
+      - loop:
+          - post:
+              url: '/v1/lacreiid/auth/login/'
+              json:
+                email: "testertestingdone@gmail.com"
+                password: "Lacrandoem321$"
+        count: 1

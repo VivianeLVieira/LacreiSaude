@@ -1,11 +1,13 @@
 {
-  "scripts":{
+  "scripts": {
     "test": "npx cypress run",
-    "test:open": "npx cypress open"
+    "test:open": "npx cypress open",
+    "test:carga": "artillery run ./nao_funcionais/teste_de_desempenho/scripts/carga_artillery/carga_login.yaml"
   },
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^23.2.1",
     "@cypress/webpack-preprocessor": "^7.0.2",
+    "artillery": "^2.0.27",
     "cypress": "^15.7.0"
   }
 }

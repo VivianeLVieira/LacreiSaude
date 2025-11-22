@@ -164,7 +164,25 @@ Os testes de Responsividade e Usabilidade utilizam a técnica de Charter, permit
 
 ## Testes de Acessibilidade
 Assim como nos testes de responsividade, é possível encontrar charters e um checklist para guiar a execução dos testes de acessibilidade.
-O pacote também inclui testes automáticos de contraste de cores e legibilidade, executados utilizando a ferramenta Lighthouse, garantindo que a aplicação atenda aos padrões de acessibilidade do WCAG.
+
+O pacote também inclui testes para VoiceOver e testes automáticos de contraste de cores e legibilidade, executados utilizando a ferramenta Lighthouse, garantindo que a aplicação atenda aos padrões de acessibilidade do WCAG.
+
+### VoiceOver
+
+#### Ativando o VoiceOver nos seus testes
+
+macOS: Command + F5 ou acesse Preferências do Sistema → Acessibilidade → VoiceOver.
+
+iOS: Ajustes → Acessibilidade → VoiceOver → Ativar.
+
+#### Navegação Básica
+
+Tecla Tab: Alternar entre grupos de elementos.
+Control + Option + Setas: Explorar a interface de forma detalhada.
+Control + Option + Space: Entrar em campos de texto, marcar/desmarcar checkbox.
+
+### Lighthouse
+
 
 ### Passos para localizar os testes
 
@@ -176,14 +194,22 @@ O pacote também inclui testes automáticos de contraste de cores e legibilidade
 
 ## Testes de Desempenho
 
-Performance Isolado -  
-Carga - JMeter como funciona??????
+Foram criados casos de teste genéricos de performance, contemplando cenarios de teste de carga e testes isolado para tempo de resposta.
+Além disso, foi implementado um teste de carga automatizado utilizando a ferramenta Artillery, que pode ser executado com o seguinte comando:
 
 ### Passos para localizar os testes
 
 1. Acesse a raiz do projeto.
 1. Entre na pasta `nao_funcionais`.
 1. Navegue até `teste_de_desempenho`.
+
+### Executar teste de carga
+Utilize o comando no terminal do projeto:
+
+```bash
+npm run test:carga
+```
+O report automático deve aparecer no console.
 
 ## Checklist de Segurança Aplicado
 
@@ -239,32 +265,51 @@ Durante a execução da suíte de testes automatizados, a base pode ser restaura
 
 # Relatório de Testes
 
+O surgimento de bugs críticos na aplicação alterou o planejamento inicial dos testes, impossibilitando a execução de alguns cenários previstos. A seguir, apresenta-se o relatório completo dos problemas identificados e as estratégias adotadas para minimizar seus impactos.
+
 ## ⚠️ Problemas no ambiente de staging e bugs no sistema
 
-No terceiro dia do desafio, houve algum problema no servidor que me impediu de logar e cadastrar novos usuário na aplicação. Além do problema do servidor, funcionalidades de recuperação de senha, solicitação de um novo de e-mail de confirmação (caso o mesmo tenha expirado) também não funcionam corretamente. Esses problemas foram reportado com mais detalhes por e-mail, bloqueando a execução dos testes e a conclusão do desafio. Durante o planejamento dos testes e escrita de casos de teste, eu apliquei as técnicas de teste ad-hoc e exploratório freestyle.
+No terceiro dia do desafio, houve algum problema no servidor que me impediu de logar e cadastrar novos usuário na aplicação. Além do problema do servidor, funcionalidades de recuperação de senha, solicitação de um novo de e-mail de confirmação (caso o mesmo tenha expirado) também não funcionam corretamente. Esses problemas foram reportado com mais detalhes por e-mail, bloqueando a execução dos testes e a conclusão do desafio. 
 
-Durante esse processo eu consegui mapear as telas e encontrar diversos bugs na aplicação, tanto funcionais como não funcionais, tudo via desktop. Felizmente, eu sempre tento fazer prints e capturar os problemas em vídeo para facilitar a reprodução posterior. Há bugs críticos, problemas de layout, erros de digitação, erros de persistência na base de dados, falta de tratamento de erros nas messagens de erros passadas para o usuário, o volume de dados na base parece ser insuficiente para alguns testes, problemas de usabilidade como na navegação via teclado e outros.
+Na fase de planejamento dos testes e escrita de casos de teste/charters foram aplicadas as técnicas de teste manuais ad-hoc e exploratório freestyle. Durante esse processo foi possível mapear as telas, encontrar préviamente diversos bugs e capturar evidências, tanto funcionais como não funcionais. Todas evidências foram coletadas no ambiente desktop com uso do browser Google Chrome. Não foi possível executar testes manuais em dispositivos móveis.
 
-Sobre a execução de testes automáticos:  O sistema requisita que ao final da primeira etapa do cadastro, que o usuário entre no e-mail pessoal para confirmar o cadastro na aplicação. Essa etapa, além de haver uma espera de 4 minutos (aconteceu 2 vezes) para que o e-mail de confirmação apareca na caixa de entrada, requer uma ação manual, que dificulta a automação. É sugerido que esse passo seja realizado automáticamente atravéz de um ping direto na API, garantindo que o teste não precise sair do contexto da apliçação.
-
-## ⚠️ Não foi possível finalizar um exemplo completo de cadastro automatizado
-
-Por esse motivo e os mencionados anteiormente não foi possível finalizar um exemplo completo de cadastro automatizado.
-
-No entanto, foi possível executar alguns testes com navegação via teclado, porém com VoiceOver só foram executadas nas telas iniciais, antes do login. 
-
-O Teste de desempenho testa a performance da aplicação ao ser acessada por muitos usuário que desejam se cadastrar e demonstrou..... (além das erros de servidor)
+## ⚠️ Adição de confirmação de email automáticas
+Sobre a criaçao e execução de testes automáticos: O sistema requisita que ao final da primeira etapa do cadastro, que o usuário entre no e-mail pessoal para confirmar o cadastro na aplicação. Nessa etapa, além de haver uma espera de 4 minutos (aconteceu 2 vezes) para que o e-mail de confirmação apareca na caixa de entrada, requer uma ação manual, o que dificulta a automação de testes. É sugerido que esse passo seja realizado automáticamente atravéz de uma requisição direto na API, garantindo que o teste não precise sair do contexto da apliçação. Por esse motivo e os mencionados anteriormente não foi possível finalizar um exemplo completo de cadastro automatizado.
+ 
 
 ## ⚠️ Não é possível gerar um relatório detalhado com cobertura de testes
-
-Porém, considerando o tempo de exeçução dos testes é possível afirmar que os caminhos mais críticos da aplicação foram cobertos. 
+Como só foi possível excutar partialmente os testes planejatos, e parte estão no modelo de charter, não é possivel mensurar corretamente a cobertura de teste para essa primeira rodada de testes manuais.
+Porém, é possível afirmar que os caminhos mais críticos da aplicação foram cobertos. 
 
 ## Resultado dos testes
+No total foram reportados X bugs. Sendo X criticos.
 
-O número total de bugs reportados é: 
-Bugs críticos: 
+Há bugs críticos, problemas de layout, erros de digitação, erros de persistência na base de dados, falta de tratamento de erros nas messagens de erros passadas para o usuário, o volume de dados na base parece ser insuficiente para alguns testes, problemas de usabilidade como na navegação via teclado e outros.
 
-Resumindo, o sistema ainda não está pronto para ir para o ambiente de produção e ser utilizado para o público.  
+Os **testes de acessibilidade** usando navegação via teclado ou "TAB" também foram executados de forma exploratória com a ajuda de um checklist de acessibilidade, porém a ordem lógica de foco e o acionamento de elementos (caixas de texto, checkbox e etc) estavam contra intuitivos ou inacessíveis. Melhorias foram reportados. 
+Testes com **voiceOver** e **lighthouse** também foram parcialmente bloqueados. 
+
+Foi possível executar  testes com voiceOver nas telas de login e criacao de contas
+
+No **teste de performce** com carga realizado no endpoint de autenticaçao, os seguintes resultados foram observados:
+
+ - 350 requisições resultaram em timeout.
+
+ - 2 requisições retornaram erro 403.
+
+ - Tempo de resposta das poucas respostas válidas variou entre 4,6 e 5,5 segundos, acima do esperado.
+
+A API não suportou a carga aplicada, indicando possíveis problemas de sobrecarga, bloqueio ou limitação de acesso agressivo. Bugs foram reportados. (bug)
+
+Detalhes completos da execução estão disponíveis na pasta de reports:
+nao_funcionais/teste_de_desempenho/reports
+
+Não foi possível executar **testes de responsividade** da aplicação nos devices inicialmente planejados, porém alguns erros de usabilidade e layout foram encontrados e reportados.
+
+### Conclusão
+Mesmo sem ter executado todos os testes previstos, com a análise da severidade de bugs e os problemas de ambiente, podemos concluir que o sistema ainda não está pronto para ir para o ambiente de produção e ser disponibilidade para o público. 
+
+
 
 ## Extra
 
@@ -274,9 +319,7 @@ Resumindo, o sistema ainda não está pronto para ir para o ambiente de produç�
 
 Por curiosidade, eu me cadastrei no ambiente de produção (acabei fazendo um exploratório) e reparei que o e-mail de confirmação de conta chegou como se tivesse vindo do ambiente de staging. Ainda assim, eu confirmei e consegui logar na conta em produção. 
 
-Observei também que muitos problemas em staging não acontecem no de produção, o que é muito positivo. 
-
-
+Observei que muitos problemas que acontecem em staging não são reproduzidos em produção, o que é muito positivo. 
 
 ------
   

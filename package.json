@@ -1,6 +1,7 @@
 {
   "scripts":{
-    "test": "npx cypress open"
+    "test": "npx cypress run",
+    "test:open": "npx cypress open"
   },
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^23.2.1",

@@ -18,7 +18,7 @@ labels: ["bug", "needs triage"]
 - [ ] Low – Detalhe visual ou menor impacto  
 
 ### Descrição
-Inserir
+*Inserir*
 
 ### Passos para reproduzir
 1.  
@@ -27,32 +27,32 @@ Inserir
 4.  
 
 ### Resultado atual
-Inserir
+*Inserir*
 
 ### Resultado esperado
-Inserir
+*Inserir*
 
 ### Prioridade
 - [ ] Alta  
 - [ ] Média  
 - [ ] Baixa  
 
-Versão do sistema:
+### Versão do sistema:
 Não disponível
 
-Ambiente
+### Ambiente
 Staging
 
-Plataforma
+### Plataforma
 Desktop
 
-Navegador
+### Navegador
 Chrome Version 142.0.7444.176 (Official Build) (x86_64)
 
-Sistema Operacional
+### Sistema Operacional
 macOs Sequoia Version 15.4.1
 
-Frequência
+### Frequência
 Sempre
 
 ### Tipo de Bug
@@ -71,4 +71,4 @@ Sempre
 - [ ] Documentação
 
 ### Evidências
-
+*Liste as evidências do bug*

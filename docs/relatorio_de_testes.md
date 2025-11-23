@@ -17,11 +17,12 @@ Como só foi possível excutar partialmente os testes planejatos, e parte estão
 Porém, é possível afirmar que os caminhos mais críticos da aplicação foram cobertos. 
 
 ## Resultado dos testes
-No total foram reportados 4 bugs. E há outras para serem reportados Encontrados em https://github.com/VivianeLVieira/LacreiSaude/issues 
+No total foram reportados 20 bugs e 2 melhorias. Os bugs com a tag "report_incompleto" não foram detalhados por falta de tempo, porém é possivel entender o problema pelo anexo. Ainda há bugs para serem reportados. Acesse: https://github.com/VivianeLVieira/LacreiSaude/issues 
 
 Há bugs críticos, problemas de layout, erros de digitação, erros de persistência na base de dados, falta de tratamento de erros nas messagens de erros passadas para o usuário, o volume de dados na base parece ser insuficiente para alguns testes, problemas de usabilidade como na navegação via teclado e outros.
 
 Os **testes de acessibilidade** usando navegação via teclado ou "TAB" também foram executados de forma exploratória com a ajuda de um checklist de acessibilidade, porém a ordem lógica de foco e o acionamento de elementos (caixas de texto, checkbox e etc) estavam contra intuitivos ou inacessíveis. Melhorias foram reportados. 
+
 Testes com **VoiceOver** e **Lighthouse** foram parcialmente bloqueados. Sendo executados nas telas de login e criação de contas. 
 O report do Lighthouse informou que a note de acessibilidade atual é 95, ou seja satisfaz os critérios de aceitação. O report do Lighthouse pode ser encontrado em nao_funcionais/teste_de_acessibilidade/lighthouse/reports
 

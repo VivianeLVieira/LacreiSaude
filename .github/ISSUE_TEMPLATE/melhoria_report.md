@@ -1,7 +1,7 @@
 ---
-name: "Bug Report"
-about: "Relate um problema encontrado no sistema"
-labels: ["bug", "needs triage"]
+name: "Report de Melhoria"
+about: "Relate uma melhoria encontrado para o sistema"
+labels: ["melhoria", "needs triage"]
 ---
 
 ### Status
@@ -10,35 +10,20 @@ labels: ["bug", "needs triage"]
 - [ ] Em Teste  
 - [ ] Resolvido  
 - [ ] Fechado  
-
-### Severidade
-- [ ] Critical – Impede uso do sistema  
-- [ ] High – Impacto significativo, contornável  
-- [ ] Medium – Impacto limitado  
-- [ ] Low – Detalhe visual ou menor impacto  
-
-### Descrição
-*Inserir*
-
-### Pré-condição 
-
-### Passos para reproduzir
-1.  
-2.  
-3.  
-4.  
-
-### Resultado atual
-*Inserir*
-
-### Resultado esperado
-*Inserir*
-
+  
 ### Prioridade
 - [ ] Alta  
 - [ ] Média  
-- [ ] Baixa  
+- [ ] Baixa 
 
+### Proposta de melhoria
+*Inserir*
+
+### Motivo/Justificativa
+
+Impacto/ Resultado Esperado
+
+ 
 ### Versão do sistema:
 Não disponível
 
@@ -54,10 +39,8 @@ Chrome Version 142.0.7444.176 (Official Build) (x86_64)
 ### Sistema Operacional
 macOs Sequoia Version 15.4.1
 
-### Frequência
-Sempre
 
-### Tipo de Bug
+### Tipo de Melhoria
 - [ ] Funcional
 - [ ] Interface ou UI
 - [ ] Usabilidade ou UX
@@ -72,5 +55,5 @@ Sempre
 - [ ] Compatibilidade (cross-platform)
 - [ ] Documentação
 
-### Evidências
-*Liste as evidências do bug*
+### Anexos
+

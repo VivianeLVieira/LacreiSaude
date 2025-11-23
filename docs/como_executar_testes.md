@@ -1,4 +1,4 @@
-# Execução de Testes
+# Como executar os testes
 
 Antes de executar os testes, certifique-se de:
 - ter a aplicação em execução publicada em um ambiente acessível (staging).

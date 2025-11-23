@@ -1,4 +1,3 @@
-Funcionalidade ---------->>>>>>>>> add na documentacao notion que esses testes pode ser aplicados a todas telas
 ## Teste Exploratório Genérico: Navegação por Teclado
 
 **Charter**

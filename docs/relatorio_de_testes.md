@@ -1,12 +1,13 @@
 # Relatório de Testes
+ As atividades, execução dos testes e criaçao de bugs/melhorias foram priorizadas e ajustas ao longo da sprint (5 dias). 
 
-O surgimento de bugs críticos na aplicação alterou o planejamento inicial dos testes, impossibilitando a execução de alguns cenários previstos. A seguir, apresenta-se o relatório completo dos problemas identificados e as estratégias adotadas para minimizar seus impactos.
+O surgimento de bugs críticos na aplicação alteraram o planejamento inicial dos testes, impossibilitando a execução de alguns cenários previstos. A seguir, apresenta-se o relatório completo dos problemas identificados e as estratégias adotadas para minimizar seus impactos. 
 
 ## ⚠️ Problemas no ambiente de staging e bugs no sistema
 
 No terceiro dia do desafio, houve algum problema no servidor que me impediu de logar e cadastrar novos usuário na aplicação. Além do problema do servidor, funcionalidades de recuperação de senha, solicitação de um novo de e-mail de confirmação (caso o mesmo tenha expirado) também não funcionam corretamente. Esses problemas foram reportado com mais detalhes por e-mail, bloqueando a execução dos testes e a conclusão do desafio. 
 
-Na fase de planejamento dos testes e escrita de casos de teste/charters foram aplicadas as técnicas de teste manuais ad-hoc e exploratório freestyle. Durante esse processo foi possível mapear as telas, encontrar préviamente diversos bugs e capturar evidências, tanto funcionais como não funcionais. Todas evidências foram coletadas no ambiente desktop com uso do browser Google Chrome. Não foi possível executar testes manuais em dispositivos móveis.
+Na fase de planejamento dos testes e escrita de casos de teste/charters foram aplicadas as técnicas de teste manuais ad-hoc e exploratório freestyle. Durante esse processo foi possível mapear as telas, encontrar préviamente diversos bugs, tanto funcionais como não funcionais e capturar evidências. Todas evidências foram coletadas no ambiente desktop com uso do browser Google Chrome.
 
 ## ⚠️ Adição de confirmação de email automáticas
 Sobre a criação e execução de testes automáticos: O sistema requisita que ao final da primeira etapa do cadastro, que o usuário entre no e-mail pessoal para confirmar o cadastro na aplicação. Nessa etapa, além de haver uma espera de 4 minutos (aconteceu 2 vezes) para que o e-mail de confirmação apareca na caixa de entrada, requer uma ação manual, o que dificulta a automação de testes. É sugerido que esse passo seja realizado automáticamente atravéz de uma requisição direto na API, garantindo que o teste não precise sair do contexto da apliçação. Por esse motivo e os mencionados anteriormente não foi possível finalizar a automação de um teste de sucesso. Como CI/CD está configurado no GitHub Actions, os testes rodando no pipeline estão falhando. 
@@ -17,7 +18,7 @@ Como só foi possível excutar partialmente os testes planejatos, e parte estão
 Porém, é possível afirmar que os caminhos mais críticos da aplicação foram cobertos. 
 
 ## Resultado dos testes
-No total foram reportados 20 bugs e 2 melhorias. Os bugs com a tag "report_incompleto" não foram detalhados por falta de tempo, porém é possivel entender o problema pelo anexo. Ainda há bugs para serem reportados. Acesse: https://github.com/VivianeLVieira/LacreiSaude/issues 
+No total foram reportados 20 bugs (4 criticos) e 2 melhorias. Os bugs com a tag "report_incompleto" não foram detalhados por falta de tempo, porém é possivel entender o problema pelo anexo. Ainda há bugs para serem reportados. Acesse: https://github.com/VivianeLVieira/LacreiSaude/issues 
 
 Há bugs críticos, problemas de layout, erros de digitação, erros de persistência na base de dados, falta de tratamento de erros nas messagens de erros passadas para o usuário, o volume de dados na base parece ser insuficiente para alguns testes, problemas de usabilidade como na navegação via teclado e outros.
 

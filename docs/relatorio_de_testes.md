@@ -17,13 +17,13 @@ Como só foi possível excutar partialmente os testes planejatos, e parte estão
 Porém, é possível afirmar que os caminhos mais críticos da aplicação foram cobertos. 
 
 ## Resultado dos testes
-No total foram reportados X bugs. Sendo X criticos.
+No total foram reportados X bugs. Sendo X criticos. Encontrados em https://github.com/VivianeLVieira/LacreiSaude/issues 
 
 Há bugs críticos, problemas de layout, erros de digitação, erros de persistência na base de dados, falta de tratamento de erros nas messagens de erros passadas para o usuário, o volume de dados na base parece ser insuficiente para alguns testes, problemas de usabilidade como na navegação via teclado e outros.
 
 Os **testes de acessibilidade** usando navegação via teclado ou "TAB" também foram executados de forma exploratória com a ajuda de um checklist de acessibilidade, porém a ordem lógica de foco e o acionamento de elementos (caixas de texto, checkbox e etc) estavam contra intuitivos ou inacessíveis. Melhorias foram reportados. 
 Testes com **VoiceOver** e **Lighthouse** foram parcialmente bloqueados. Sendo executados nas telas de login e criação de contas. 
-O report do Lighthouse informou que a note de acessibilidade atual é 95, ou seja satisfatória. O report do Lighthouse pode ser encontrado em nao_funcionais/teste_de_acessibilidade/lighthouse/reports
+O report do Lighthouse informou que a note de acessibilidade atual é 95, ou seja satisfaz os critérios de aceitação. O report do Lighthouse pode ser encontrado em nao_funcionais/teste_de_acessibilidade/lighthouse/reports
 
 No **VoiceOver** foram achados alguns bugs que dificultam mas não impedem que o usuário realize suas atividades. 
 
@@ -35,7 +35,7 @@ No **teste de performce** com carga realizado no endpoint de autenticaçao, os s
 
  - Tempo de resposta das poucas respostas válidas variou entre 4,6 e 5,5 segundos, acima do esperado.
 
-A API não suportou a carga aplicada, indicando possíveis problemas de sobrecarga, bloqueio ou limitação de acesso agressivo. Bugs foram reportados. (bug)
+A API não suportou a carga aplicada, indicando possíveis problemas de sobrecarga, bloqueio ou limitação de acesso agressivo. Bugs foram reportados. 
 
 Detalhe completos da execução estão disponíveis na pasta de reports:
 nao_funcionais/teste_de_desempenho/reports
@@ -48,4 +48,4 @@ O checklist de segurança está em andamento, com 8 itens validados de um total 
 
 ### Conclusão
 
-Embora tenha sido necessário priorizar determinados testes e replanejar algumas execuções em função das limitações impostas pelos erros do servidor, a análise da severidade dos bugs e dos problemas de ambiente indica que esta versão do sistema ainda não está pronta para ser colocada no ambiente de produção e disponibilizada ao público.
+Embora tenha sido necessário priorizar determinados testes e replanejar algumas execuções de teste, a análise da severidade dos bugs e dos problemas de ambiente indica que esta versão do sistema ainda não está pronta para ser colocada no ambiente de produção e disponibilizada ao público.

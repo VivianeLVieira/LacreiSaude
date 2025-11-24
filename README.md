@@ -18,5 +18,6 @@ As seguintes ferramentas são necessárias para os testes:
 ## Sumário
 
 - [Plano de Testes](docs/plano_de_testes.md)
-- [Como Executar de Testes](docs/execucao_de_testes.md)
+- [Notion](https://www.notion.so/Desafio-T-cnico-Quality-Assurance-na-Lacrei-Sa-de-2b08ac69d04c80abb81de9a7c6b61df5)
+- [Como Executar de Testes](docs/como_executar_testes.md)
 - [Relatório de Testes](docs/relatorio_de_testes.md)
